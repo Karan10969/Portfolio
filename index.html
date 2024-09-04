@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&family=Nerko+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <a onclick="onNavHomeClick()">
+            <div> Home </div>
+        </a>
+        <a onclick="onNavAboutClick()">
+            <div> About </div>
+        </a>
+        <a onclick="onNavProjectClick()">
+            <div> Projects </div>
+        </a>
+    </nav>
+
+    <div class="home-container" id="home-container">
+
+        <section class="introduction">
+
+            <div>
+                <article>Hi! I am Karan</article>
+                <h2>Full Stack Web Developer</h2>
+                <h5>Always learning new tech and Looking for opportunities to see through my potential</h5>
+            </div>
+
+        </section>
+
+        <div class="profile-image-container">
+            <div></div>
+
+            <button class="contact-me-button" onclick="contactButton()">
+                Contact Me
+            </button>
+
+            <button class="close-contact-button" onclick="closeContactFn()" style="display: none;">
+                &#10060;
+            </button>
+
+
+            <article class="contact-info" style="display: none;">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#ECDFCC">
+                        <path
+                            d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
+                    </svg>
+                    karanyash1111@gmail.com
+                    <button title="copy" class="copy-button" onclick="copyEmail()">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#e8eaed">
+                            <path
+                                d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
+                        </svg>
+                    </button>
+
+                </span>
+
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#ECDFCC">
+                        <path
+                            d="M760-480q0-117-81.5-198.5T480-760v-80q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480h-80Zm-160 0q0-50-35-85t-85-35v-80q83 0 141.5 58.5T680-480h-80Zm198 360q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z" />
+                    </svg> +91-7838898851
+                    <button title="copy" class="copy-button" onclick="copyNumber()">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#e8eaed">
+                            <path
+                                d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
+                        </svg>
+                    </button>
+                </span>
+
+            </article>
+        </div>
+
+    </div>
+
+    <div class="about-container" id="about-container">
+
+        <p style="font-size: 1.5em;">About Me &nbsp;<svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                viewBox="0 -960 960 960" width="24px" fill="#ECDFCC">
+                <path
+                    d="M491-339q70 0 119-45t49-109q0-57-36.5-96.5T534-629q-47 0-79.5 30T422-525q0 19 7.5 37t21.5 33l57-57q-3-2-4.5-5t-1.5-7q0-11 9-17.5t23-6.5q20 0 33 16.5t13 39.5q0 31-25.5 52.5T492-418q-47 0-79.5-38T380-549q0-29 11-55.5t31-46.5l-57-57q-32 31-49 72t-17 86q0 88 56 149.5T491-339ZM240-80v-172q-57-52-88.5-121.5T120-520q0-150 105-255t255-105q125 0 221.5 73.5T827-615l52 205q5 19-7 34.5T840-360h-80v120q0 33-23.5 56.5T680-160h-80v80h-80v-160h160v-200h108l-38-155q-23-91-98-148t-172-57q-116 0-198 81t-82 197q0 60 24.5 114t69.5 96l26 24v208h-80Zm254-360Z" />
+            </svg></p>
+
+        <div class="about-buttons" id="qualificationBtn" onclick="onQualificationClick()">Qualifications</div>
+        <article class="about-desc" id="qualificationDesc">
+
+            <button class="close-desc" onclick="onCloseQualiClick()">&#10060;</button><br>
+            <strong>Master of Computer Application (Final Year)</strong><br>
+            <small>NOV 2023 - PRESENT, GHAZIABAD</small><br>
+
+            <strong>CCSU / Bachelor of Computer Application</strong><br>
+            <smal>JULY 2019 - OCT 2022, LOCATION</smal><br>
+
+        </article>
+
+        <div class="about-buttons" id="skillsBtn" onclick="onSkillsClick()"> Skills </div>
+        <article class="about-desc" id="skillsDesc">
+
+            <button class="close-desc" onclick="onCloseSkillClick()">&#10060;</button><br>
+            <div class="about-desc-container">
+                <div><img src="./images/java.png" height="35" width="35">Java</div>
+                <div><img src="./images/javascript.png" height="35" width="35">JavaScript</div>
+                <div><img src="./images/mern.jpeg" height="45" width="50">MERN</div>
+                <div><img src="./images/redux.png" height="35" width="35">Redux</div>
+                <div><img src="./images/mysql.png" height="35" width="35">MySql</div>
+                <div><img src="./images/html.png" height="35" width="35">HTML</div>
+                <div><img src="./images/css.png" height="35" width="35">CSS</div>
+            </div>
+
+        </article>
+
+        <div class="about-buttons" id="workBtn" onclick="onWorkClick()"> Work Ventures </div>
+        <article class="about-desc" id="workDesc">
+
+            <button class="close-desc" onclick="onCloseWork()">&#10060;</button><br>
+            <Strong>Burner Digital / Content Writer</Strong><br>
+            <small>AUG 2022 - OCT 2023, NOIDA</small><br>
+            <small>Worked as Content writer for the YouTube Channel BurnerBits, also worked for Brands(Layers and
+                Overlays).</small><br>
+            <strong>Skills gained:</strong> <small>Researching topics with efficiency, Reading Statistics for New Video
+                Topics, Working and
+                Coordinating with the Team members.</small>
+
+        </article>
+
+
+        <!-- <div class="about-buttons" id="photoBtn"> 📸 </div> -->
+
+    </div>
+
+    <div class="project-container" id="project-container">
+
+        <p style="font-size: 1.5em;">Projects<svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                viewBox="0 -960 960 960" width="24px" fill="#ECDFCC">
+                <path
+                    d="M440-183v-274L200-596v274l240 139Zm80 0 240-139v-274L520-457v274Zm-40-343 237-137-237-137-237 137 237 137ZM160-252q-19-11-29.5-29T120-321v-318q0-22 10.5-40t29.5-29l280-161q19-11 40-11t40 11l280 161q19 11 29.5 29t10.5 40v318q0 22-10.5 40T800-252L520-91q-19 11-40 11t-40-11L160-252Zm320-228Z" />
+            </svg></p>
+
+        <section class="project-cards">
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class=" swiper-wrapper">
+                    <!-- Slides -->
+                        
+                        <div class="project-card swiper-slide">
+                            <p>Task Manager App</p>
+                            <img src="./images/tmss.png">
+                            <section class="project-card-desc">
+                                <article><strong>Languages:</strong> Made with MERN tech stack with RTK Query and Redux data flow control</article><br>
+                                <article><strong>Features:</strong> Login Form with Validation, Proper authorization with Access and Refresh Tokens, CRUD Operations on Tasks, Database Connection, Optimized performance by Normalized States.</article><br>
+                            </section>
+                        </div>
+
+                        <div class="project-card swiper-slide">
+                            <p>Notes App</p>
+                            <img src="./images/tass.png">
+                            <section class="project-card-desc">
+                                <article><strong>Languages:</strong> ReactJs, NodeJs, ExpressJs, Sqlite</article><br>
+                                <article><strong>Features:</strong> Full stack web app, Notes app lets you add new notes, edit previous notes, delete notes using Express endpoints(GET, POST, PATCH, DELETE). And uses Sqlite database for the API</article><br>
+                            </section>
+                        </div>
+                        <div class="project-card swiper-slide">
+                            <p>SpaceY Website</p>
+                            <img src="./images/swss.png">
+                            <section class="project-card-desc">
+                                <article><strong>Languages:</strong> Php, JavaScript, HTML, CSS, MySql</article><br>
+                                <article><strong>Features:</strong> NASA API integration using Fetch, Login and SignUp page with Database authentication.</article><br>
+                            </section>
+                        </div>
+                        <div class="project-card swiper-slide">
+                            <p>Memegenerator</p>
+                            <img src="./images/mgss.png">
+                            <section class="project-card-desc">
+                                <article><strong>Languages:</strong> ReactJs, HTML, CSS</article><br>
+                                <article><strong>Features:</strong> Generate random meme images, edit text on the image, option to choose meme image according to emotions.</article><br>
+                            </section>
+                        </div>
+                        <div class="project-card swiper-slide">
+                            <p>Documentary Website</p>
+                            <img src="./images/dwss.png">
+                            <section class="project-card-desc">
+                                <article><strong>Languages:</strong> Made with ReactJs, HTML, CSS</article><br>
+                                <article><strong>Features:</strong> features include Use of React Router for navigating between business, use of Animation, function that sorts Businesses according to the ratings</article><br>
+                            </section>
+                        </div>
+
+                    </div>
+
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </section>
+
+
+    </div>
+
+
+
+
+
+    <script src="./swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+colors -
+
+black: #1E201E
+grey: #3C3D37
+green: #697565
+cream: #ECDFCC
+
+
+fonts - 
+
+font-family: "SUSE", sans-serif;
+font-family: "Ubuntu", sans-serif;
+font-family: "Nerko One", cursive;
+
+

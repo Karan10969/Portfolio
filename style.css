@@ -1,0 +1,358 @@
+* {
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: #3C3D37;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0.7em;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.navbar div {
+    height: 5vh;
+    width: 8vw;
+    background-color: #1E201E;
+    color: white;
+    text-align: center;
+    padding: 0.2em;
+    font-family: "Nerko One", cursive;
+    transition: transform, 0.5s;
+}
+
+.navbar div:hover {
+    transform: scale(105%);
+    cursor: pointer;
+    color: #1E201E;
+    background-color: white;
+}
+
+
+.home-container {
+    /* background-image: url("/images/background.jpg");
+    background-size: cover; */
+    height: 80vh;
+    width: 99vw;
+    margin-top: 2em;
+    display: flex;
+}
+
+.introduction {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
+.introduction div {
+    background-color: #1E201E;
+    color: #ECDFCC;
+    font-family: "SUSE", sans-serif;
+    padding: 1em;
+    width: 60%;
+    box-shadow: 1px 1px 10px black;
+    transition: transform 0.5s;
+}
+
+.introduction div:hover {
+    transform: scale(103%);
+}
+
+.introduction div article {
+    font-weight: 500;
+    width: 34%;
+    height: 30%;
+    padding: 0.4em;
+    color: #3C3D37;
+    border-radius: 0.2em;
+    background-color: #ECDFCC;
+    box-shadow: 0.5px 0.5px 5px #ECDFCC;
+}
+
+.profile-image-container {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image-container div {
+    height: 50%;
+    width: 39%;
+    background-image: url("/images/kknew.jpg");
+    background-size: cover;
+    border-radius: 1em;
+    box-shadow: 1px 1px 5px black;
+}
+
+.contact-me-button {
+    border: none;
+    margin-top: 1em;
+    height: 5vh;
+    width: 10vw;
+    background-color: #ECDFCC;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 0.9em;
+    text-align: center;
+    padding-top: 0.2em;
+    border-radius: 0.2em;
+    transition: box-shadow 0.5s;
+    transition: transform 0.5s;
+}
+
+.contact-me-button:hover {
+    transform: scale(105%);
+    box-shadow: 2px 2px 5px black;
+    cursor: pointer;
+}
+
+.close-contact-button {
+    margin-top: 1em;
+    width: 3vw;
+    cursor: pointer;
+    background-color: #3C3D37;
+    border: none;
+    transition: transform 0.5s;
+}
+
+.close-contact-button:hover {
+    transform: rotate(180deg) scale(120%);
+}
+
+.contact-info {
+    background-color: #697565;
+    border-radius: 0.2em;
+    padding: 1em;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    transition: transform 0.5s;
+}
+
+.contact-info:hover {
+    transform: scale(107%);
+    cursor: pointer;
+}
+
+.contact-info span {
+    display: flex;
+    align-items: center;
+    font-family: "SUSE", sans-serif;
+    gap: 1em;
+}
+
+.copy-button {
+    border: none;
+    background-color: #697565;
+}
+
+.copy-button:hover {
+    transform: scale(105%);
+    cursor: pointer;
+}
+
+/* !! About container */
+.about-container::-webkit-scrollbar {
+    display: none;
+}
+
+.about-container {
+    height: 90vh;
+    width: 99vw;
+    overflow: scroll;
+}
+
+.about-container p {
+    font-family: "Nerko One", cursive;
+    color: #ECDFCC;
+    text-align: center;
+}
+
+.about-buttons {
+    min-height: 12%;
+    width: 20%;
+    margin-top: 2em;
+    text-align: center;
+    font-family: "SUSE", sans-serif;
+    padding-top: 1em;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 2em;
+
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.about-buttons:hover {
+    transform: scale(107%);
+    box-shadow: 2px 2px 10px #ECDFCC;
+}
+
+.about-desc {
+    width: 30%;
+    margin: 0.5em auto;
+    padding: 0.5em;
+    background-color: #1E201E;
+    color: #ECDFCC;
+    font-family: "SUSE", sans-serif;
+    border-radius: 0.5em;
+    display: none;
+    animation: descriptionAni 0.2s alternate;
+}
+
+.close-desc {
+    width: 2vw;
+    height: 4vh;
+    font-size: 0.6em;
+    padding: 0;
+    cursor: pointer;
+    background-color: #ECDFCC;
+    border: 1px solid #3C3D37;
+    border-radius: 0.5em;
+    transform: translateY(-0.5em) translateX(-0.5em);
+    transition: transform 0.5s;
+}
+
+.close-desc:hover {
+    transform: rotate(170deg);
+}
+
+#qualificationBtn {
+    color: #697565;
+    font-weight: 700;
+    background-image: url("./images/books.jpg");
+    background-size: cover;
+    border-radius: 0.5em;
+}
+
+#skillsBtn {
+    color: #ECDFCC;
+    font-weight: 700;
+    background-image: url("./images/skills.jpg");
+    background-size: cover;
+    border-radius: 0.5em;
+}
+
+#workBtn {
+    color: #1E201E;
+    font-weight: 700;
+    background-image: url("./images/work.jpg");
+    background-size: cover;
+    border-radius: 0.5em;
+}
+
+#photoBtn {
+    color: #1E201E;
+    font-weight: 700;
+    background-image: url("./images/work.jpg");
+    background-size: cover;
+    border-radius: 0.5em;
+}
+
+@keyframes descriptionAni {
+    from {
+        transform: scale(0%);
+    }
+}
+
+.about-desc-container::-webkit-scrollbar {
+    display: none;
+}
+
+.about-desc-container {
+    padding: 0.5em;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 50% 50%;
+    row-gap: 1em;
+    overflow: scroll;
+}
+
+.about-desc-container div {
+    height: 10vh;
+    width: 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5 0.5;
+}
+
+
+/* !! Project container */
+
+.project-container {
+    height: 90vh;
+    width: 99vw;
+}
+
+.project-container p {
+    font-family: "Nerko One", cursive;
+    color: #ECDFCC;
+    text-align: center;
+}
+
+.project-cards {
+    border: 1px solid #1E201E;
+    height: 80%;
+    max-width: 40%;
+    margin: 0em auto; 
+    display: flex;
+    gap: 1em;
+    box-shadow: 2px 2px 10px #1E201E;
+}
+
+.project-card {
+    min-height: 90%;
+    min-width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Ubuntu", sans-serif;
+    display: none;
+}
+.project-card img {
+    width: 100%;
+    margin-bottom: 1em;
+    border-radius: 0.2em;
+}
+.project-card-desc{
+    padding: 0.6em;
+    height: 65%;
+    background-color: #1E201E;
+    color:#ECDFCC;
+}
+.swiper-button-prev{
+    color: #3C3D37 !important;
+    opacity: 40%;
+    transition: transform 0.5s, opacity 0.5s;
+}
+.swiper-button-prev:hover {
+    transform: scale(110%);
+    opacity: 100%;
+}
+.swiper-button-next{
+    color: #3C3D37 !important;
+    opacity: 40%;
+    transition: transform 0.5s, opacity 0.5s;
+}
+.swiper-button-next:hover {
+    transform: scale(110%);
+    opacity: 100%;
+}
