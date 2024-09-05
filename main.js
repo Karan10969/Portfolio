@@ -31,8 +31,13 @@ const closeContactFn = () =>{
 
 //--------clipboard copy function
 const copyEmail = () => {
-    navigator.clipboard.writeText("karanyash1111@gmail.com");
-    alert("copied to clipboard");
+    navigator.clipboard.writeText("karanyash1111@gmail.com")
+    .then( () => {
+        alert("copied to clipboard")
+    })
+    .catch( () => {
+        alert("something went wrong!")
+    })
 }
 
 const copyNumber = () => {
