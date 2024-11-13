@@ -7,7 +7,11 @@ body::-webkit-scrollbar {
 }
 
 body {
-    background-color: #3C3D37;
+    background: hsla(0, 0%, 0%, 1);
+    background: linear-gradient(90deg, hsla(0, 0%, 0%, 1) 0%, hsla(193, 9%, 19%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(0, 0%, 0%, 1) 0%, hsla(193, 9%, 19%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(0, 0%, 0%, 1) 0%, hsla(193, 9%, 19%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#2D3436", GradientType=1);
 }
 
 .navbar {
@@ -79,13 +83,15 @@ body {
 }
 
 .introduction div {
-    background-color: #1E201E;
     color: #ECDFCC;
     font-family: "SUSE", sans-serif;
     padding: 1em;
-    width: 60%;
+    width: 80%;
+    height: 50%;
     box-shadow: 1px 1px 10px black;
     transition: transform 0.5s;
+    background-image: url('./images/intro-back.jpg');
+    background-size: cover;
 }
 
 .introduction div:hover {
@@ -94,13 +100,15 @@ body {
 
 .introduction div article {
     font-weight: 500;
-    width: 34%;
-    height: 30%;
+    width: 50%;
+    height: 25%;
     padding: 0.4em;
+    padding-top: 0.7em;
     color: #3C3D37;
     border-radius: 0.2em;
     background-color: #ECDFCC;
     box-shadow: 0.5px 0.5px 5px #ECDFCC;
+    text-align: center;
 }
 
 .profile-image-container {
@@ -115,9 +123,9 @@ body {
 .profile-image-container div {
     height: 50%;
     width: 39%;
-    background-image: url("/images/kknew.jpg");
+    background-image: url("/images/kkp.jpg");
     background-size: cover;
-    border-radius: 1em;
+    border-radius: 50%;
     box-shadow: 1px 1px 5px black;
 }
 
@@ -147,7 +155,7 @@ body {
     margin-top: 1em;
     width: 3vw;
     cursor: pointer;
-    background-color: #3C3D37;
+    background-color: #222829;
     border: none;
     transition: transform 0.5s;
 }
@@ -157,7 +165,6 @@ body {
 }
 
 .contact-info {
-    background-color: #697565;
     border-radius: 0.2em;
     padding: 1em;
     width: 25vw;
@@ -165,11 +172,16 @@ body {
     flex-direction: column;
     margin-top: 1em;
     transition: transform 0.5s;
+    background-image: url("./images/contact-me-background-png.png");
+    background-size: cover;
+    background-position: center;
+    animation: opening 0.3s linear;
 }
 
 .contact-info:hover {
     transform: scale(107%);
     cursor: pointer;
+    box-shadow: 1px 1px 5px black;
 }
 
 .contact-info span {
@@ -177,11 +189,13 @@ body {
     align-items: center;
     font-family: "SUSE", sans-serif;
     gap: 1em;
+    color: white;
+    font-weight: bold;
 }
 
 .copy-button {
     border: none;
-    background-color: #697565;
+    background-color: #22282900;
 }
 
 .copy-button:hover {
@@ -254,14 +268,17 @@ body {
     .profile-image-container div {
         width: 40vw;
     }
-    .contact-me-button{
+
+    .contact-me-button {
         width: 15vw;
     }
+
     .contact-info {
         width: 40vw;
         animation: pop 1s normal;
     }
-    .copy-button{
+
+    .copy-button {
         display: none;
     }
 }
@@ -272,6 +289,41 @@ body {
     }
 }
 
+@keyframes opening {
+    0% {
+        transform: translateY(100%);
+        opacity: 0%;
+    }
+}
+
+/* animation on scroll */
+.introduction-card-animation {
+    animation: intro-animation 0.4s linear;
+}
+
+.image-animation {
+    animation: profile-image-animation 0.4s linear;
+}
+
+@keyframes intro-animation {
+    from {
+        transform: translateX(-100%) rotateY(90deg) scaleY(0);
+        opacity: 0%;
+    }
+}
+
+@keyframes profile-image-animation {
+    from {
+        /* transform: translateX(100%) rotateY(90deg) scaleY(0);
+        */
+        transform: rotate3d(3, 3, 0, 180deg);
+        opacity: 0%;
+    }
+}
+/* ------------------------ */
+
+
+
 /* !! About container */
 .about-container::-webkit-scrollbar {
     display: none;
@@ -281,6 +333,7 @@ body {
     height: 90vh;
     width: 99vw;
     overflow: scroll;
+    padding-top: 2em;
 }
 
 .about-container p {
@@ -310,15 +363,18 @@ body {
 }
 
 .about-desc {
-    width: 30%;
+    width: 35%;
     margin: 0.5em auto;
-    padding: 0.5em;
+    padding: 1em;
     background-color: #1E201E;
-    color: #ECDFCC;
+    color: white;
     font-family: "SUSE", sans-serif;
     border-radius: 0.5em;
     display: none;
-    animation: descriptionAni 0.2s alternate;
+    animation: opening 0.4s linear;
+    background-image: url('./images/aboutDesc2.jpg');
+    background-size: cover;
+    box-shadow: 1px 1px 5px #3C3D37;
 }
 
 .close-desc {
@@ -376,17 +432,29 @@ body {
     }
 }
 
-.about-desc-container::-webkit-scrollbar {
-    display: none;
-}
+.about-desc-container::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: black;
+  }
+  
+  .about-desc-container::-webkit-scrollbar {
+    width: 12px;
+    background-color: black;
+  }
+  
+  .about-desc-container::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #555;
+  }
+
 
 .about-desc-container {
-    padding: 0.5em;
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 50% 50%;
-    row-gap: 1em;
-    overflow: scroll;
+    display: flex;
+    gap: 2em;
+    height: 15vh;
+    align-items: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .about-desc-container div {
@@ -426,21 +494,54 @@ body {
         height: 3vh;
     }
 }
+
 @media (min-width: 768px) and (max-width: 1024px) {
     .about-container {
         margin: 0 auto;
         height: 60vh;
     }
-    .about-buttons{
+
+    .about-buttons {
         width: 40vw;
         height: 7vh;
     }
-    .about-desc{
+
+    .about-desc {
         width: 40vw;
     }
-    .close-desc{
+
+    .close-desc {
         width: 3vw;
         height: 3vh;
+    }
+}
+
+.qualification-button-animation {
+    animation: quali-animation 0.4s ease-in-out;    
+}
+.skills-button-animation {
+    animation: skills-animation 0.4s ease-in-out;    
+}
+.work-button-animation {
+    animation: work-animation 0.4s ease-in-out;    
+}
+
+@keyframes quali-animation {
+    0%{
+        transform: translateX(-100%) rotateZ(180deg);
+        opacity: 0%;
+    }
+}
+@keyframes skills-animation {
+    0%{
+        transform: translateX(100%) rotateZ(180deg);
+        opacity: 0%;
+    }
+}
+@keyframes work-animation {
+    0%{
+        transform: translateX(-100%) rotateZ(180deg);
+        opacity: 0%;
     }
 }
 
@@ -519,12 +620,14 @@ body {
         height: 50vh;
     }
 }
-@media (min-width: 768px) and (max-width: 1024px){
-    .project-container{
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .project-container {
         height: 70vh;
         margin-top: -4em;
     }
-    .project-cards{
+
+    .project-cards {
         min-width: 70vw;
     }
 }

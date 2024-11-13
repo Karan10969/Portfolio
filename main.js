@@ -70,3 +70,48 @@ const onCloseWork = () => {
 }
 
 
+
+// ---------------Scroll animations-------------- //
+let options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.3
+  };
+
+// ---------------- scroll to home animation ------------- //
+let onScrollToHome = new IntersectionObserver( enteries =>{
+    enteries.forEach( entry => {
+        if(entry.isIntersecting){
+            document.getElementById("profile-image").classList.add('image-animation')
+            document.getElementById("introduction-card").classList.add('introduction-card-animation')
+            return
+        }
+        document.getElementById("introduction-card").classList.remove('introduction-card-animation')
+        document.getElementById("profile-image").classList.remove('image-animation')
+
+    })
+}, options)
+
+onScrollToHome.observe(document.getElementById("home-container"))
+
+// ---------------- scroll to home animation end ------------- //
+
+// ---------------- scroll to about animation ------------- //
+
+let onScrollToAbout = new IntersectionObserver( enteries => {
+    enteries.forEach(entry => {
+
+        if(entry.isIntersecting){
+            document.getElementById('qualificationBtn').classList.add('qualification-button-animation')
+            document.getElementById('skillsBtn').classList.add('skills-button-animation')
+            document.getElementById('workBtn').classList.add('work-button-animation')
+            return
+        }
+        document.getElementById('qualificationBtn').classList.remove('qualification-button-animation')
+        document.getElementById('skillsBtn').classList.remove('skills-button-animation')
+        document.getElementById('workBtn').classList.remove('work-button-animation')
+    })
+}, options)
+onScrollToAbout.observe(document.getElementById('about-container'))
+
+// ---------------- scroll to home animation end ------------- //
