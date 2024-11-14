@@ -115,3 +115,21 @@ let onScrollToAbout = new IntersectionObserver( enteries => {
 onScrollToAbout.observe(document.getElementById('about-container'))
 
 // ---------------- scroll to home animation end ------------- //
+
+// ---------------- scroll to project animation ------------- //
+
+let onScrollToProject = new IntersectionObserver(enteries=>{
+
+    enteries.forEach( entry=>{
+
+        if(entry.isIntersecting){
+            document.getElementById("project-cards").classList.add('project-animation')
+            return;
+        }
+        document.getElementById("project-cards").classList.remove('project-animation')
+    })
+}, options)
+
+onScrollToProject.observe(document.getElementById('project-container'))
+
+// ---------------- scroll to project animation end------------- //
